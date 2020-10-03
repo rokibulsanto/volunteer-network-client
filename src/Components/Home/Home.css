@@ -1,0 +1,16 @@
+.heading{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+
+}
+.searchForm{
+    margin:0 auto;
+    display: inline;
+    
+}
+.btnStyle{
+  margin-left: 794px;
+  margin-top: -64px;
+  width: 90px;
+}
