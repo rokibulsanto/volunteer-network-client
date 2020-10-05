@@ -1,0 +1,23 @@
+.regContainer{
+    margin: 0 auto;
+    width:420px;
+    border:1px solid gray;
+    margin-top: 130px;
+    padding:60px;
+    border-radius: 15px;
+   
+}
+.regContainer input{
+    width: 320px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding:5px;
+   
+}
+#submit{
+    border:1px solid gray;
+    background-color:orange;
+    margin-top: 10px;
+    color:white;
+}

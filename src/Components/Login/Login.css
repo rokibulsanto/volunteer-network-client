@@ -1,0 +1,23 @@
+.login{
+    width:400px;
+    border:1px solid gray;
+    margin:0 auto;
+    padding:50px;
+    padding-bottom: 80px;
+    margin-top: 150px;
+    border-radius: 15px;
+    text-align: center;
+    
+}
+.loginLogo{
+    width: 200px;
+   
+}
+.logoArea{
+   
+    text-align: center;
+}
+.google{
+    width: 40px;
+    padding: 5px;
+}
