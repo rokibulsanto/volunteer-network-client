@@ -12,8 +12,8 @@ const Registration = () => {
     const { register, handleSubmit} = useForm();
     const history = useHistory();
 
-    const onSumbit = (data) => {
-        const eventDetails = {...loogedInUser, ...eventInfo,...data};
+    const handleSubmi = (e) => {
+        const eventDetails = {...loogedInUser, ...eventInfo};
         fetch('https://aqueous-journey-04411.herokuapp.com/addEvent', {
             method:'POST',
             headers: {
@@ -26,6 +26,7 @@ const Registration = () => {
             console.log(data);
         })
         history.push('/event');
+        e.preventDefault();
     }
 
     return (
@@ -33,7 +34,7 @@ const Registration = () => {
             <div className="logoArea"> <img className="loginLogo" src={logo} alt=""/> </div>
             <div className="regContainer">
                 <h4>Register as a Vounteer</h4>
-                <form onSubmit={handleSubmit(onSumbit)}>
+                <form onSubmit={handleSubmi}>
                     <input type="text" defaultValue={loogedInUser.name} placeholder="Full Name"  ref={register({ required: true })}/>
                     <input type="email" defaultValue={loogedInUser.email} placeholder="Username Or Email"  ref={register({ required: true })}/>
                     <input type="date"  ref={register({ required: true })}/>
