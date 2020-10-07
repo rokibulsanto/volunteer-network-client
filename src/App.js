@@ -11,6 +11,7 @@ import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
 import Registration from './Components/Registration/Registration';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Event from './Components/Event/Event';
 
  export const userContext = createContext();
  export const activityContext = createContext();
@@ -34,6 +35,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Login></Login>
+        </Route>
+        <Route path="/event">
+          <Event></Event>
         </Route>
         <PrivateRoute path="/registration">
           <Registration></Registration>

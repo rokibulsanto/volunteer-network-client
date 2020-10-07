@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import { infoContext } from '../../App';
-import Data from '../FakeData/FakeData';
 import './Activity.css';
 
 const Activity = ({data}) => {
@@ -12,7 +11,7 @@ const Activity = ({data}) => {
 
     const handleEvent = () => {
         setEventInfo(data);
-        history.replace('/registration');
+        history.push('/registration');
     }
     return (
         <div className="col-md-3" onClick={handleEvent}>

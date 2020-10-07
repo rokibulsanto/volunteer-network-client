@@ -2,30 +2,45 @@ import React, { useContext, useEffect } from 'react';
 import './Registration.css';
 import logo from '../../logos/Group 1329.png';
 import { activityContext, infoContext, userContext } from '../../App';
+import { Link, useHistory } from 'react-router-dom';
+import { useForm } from "react-hook-form";
 
 const Registration = () => {
     const [loogedInUser, setLoogedInUser] = useContext(userContext);
     const [eventId, setEventId] = useContext(activityContext);
     const [eventInfo, setEventInfo] = useContext(infoContext);
-    console.log(eventInfo.title);
+    const { register, handleSubmit} = useForm();
+    const history = useHistory();
 
-    // useEffect(() => {
-    //     fetch('http://localhost:5000/event/'+eventId)
-    //     .then(res => res.json())
-    //     .then(data => setEventInfo(data));
-    // },[])
+    const onSumbit = (data) => {
+        const eventDetails = {...loogedInUser, ...eventInfo,...data};
+        fetch('https://aqueous-journey-04411.herokuapp.com/addEvent', {
+            method:'POST',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8'
+              },
+              body:JSON.stringify(eventDetails)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+        history.push('/event');
+    }
+
     return (
         <div>
             <div className="logoArea"> <img className="loginLogo" src={logo} alt=""/> </div>
             <div className="regContainer">
                 <h4>Register as a Vounteer</h4>
-                <form action="">
-                    <input type="text" defaultValue={loogedInUser.name} placeholder="Full Name"/>
-                    <input type="email" defaultValue={loogedInUser.email} name="" id="" placeholder="Username Or Email"/>
-                    <input type="date" name="" id=""/>
-                    <input type="text"  placeholder="Description" required/>
-                    <input type="text" placeholder="" Value={eventInfo.title}/>
-                    <input id="submit" type="submit" value="Registration"/>
+                <form onSubmit={handleSubmit(onSumbit)}>
+                    <input type="text" defaultValue={loogedInUser.name} placeholder="Full Name"  ref={register({ required: true })}/>
+                    <input type="email" defaultValue={loogedInUser.email} placeholder="Username Or Email"  ref={register({ required: true })}/>
+                    <input type="date"  ref={register({ required: true })}/>
+                    <input type="text"  placeholder="Description" required  ref={register({ required: true })}/>
+                    <input type="text" placeholder="" Value={eventInfo.title}  ref={register({ required: true })}/>
+                    <img style={{width:'20px',display:'none'}} src={eventInfo.image} alt=""  ref={register({ required: true })}/>
+                   <input id="submit" type="submit" value="Registration"/> 
                 </form>
             </div>
         </div>

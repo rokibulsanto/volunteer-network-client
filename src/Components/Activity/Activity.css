@@ -1,13 +1,12 @@
 .img{
     height: 330px;
-    width: 330px;
+    width: 280px;
     margin: 15px;
-    z-index:-1;
 }
 .activityHeading{
     margin:15px;
     border:1px solid gold;
-    width: 330px;
+    width: 280px;
     text-align: center;
     background-color:#20232A;
     padding:10px;

@@ -38,6 +38,7 @@ let { from } = location.state || { from: { pathname: "/" } };
             }
             setUser(signInUser);
             setLoogedInUser(signInUser);
+            storeAuthToken();
             history.replace(from);
 
         })
@@ -46,7 +47,17 @@ let { from } = location.state || { from: { pathname: "/" } };
             console.log(err.message);
         })
     }
-
+   
+    const storeAuthToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+        .then(function(idToken) {
+           sessionStorage.setItem('token', idToken);
+        
+          })
+          .catch(function(error) {
+            
+          });
+    }
 
     return (
         <div>

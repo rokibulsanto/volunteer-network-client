@@ -111,18 +111,11 @@ var event = [
 
 
 const Home = () => {
-    const [item, setItem] = useState([]);
-
-//    useEffect(() => {
-//        fetch('http://localhost:5000/event')
-//        .then(res => res.json())
-//        .then(data => setItem(data))
-//    })
 
     return (
         <div>
             <Appbar></Appbar>
-             <button >AddProudct</button>
+            
             <h2 className="heading">I GROW BY HELPING PEOPLE IN NEED.</h2>
             <Form inline>
              <FormControl type="text" placeholder="Search" className="searchForm"/>
