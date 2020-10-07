@@ -33,7 +33,7 @@ const Event = () => {
         })
         .then(res => res.json())
         .then(result => {
-            console.log('Deleted Successfully');
+           
             
         })
         clear(id);
