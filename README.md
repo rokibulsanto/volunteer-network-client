@@ -1,4 +1,13 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app
+
+•	Live site: https://volunteer-network-client-site.web.app/
+•	Volunteet network is the full stack project using React, firebase for auth and Mongodb as backend server
+•	User can log in with google popup ,Registration for a particular event and see his own added event
+•	If the user is not interested can cancel his event
+
+## Technology used to this Project
+Html, Css, react-bootsrtap, javascript, react, react router, firebase, node, Mongodb
+
 
 ## Available Scripts
 
